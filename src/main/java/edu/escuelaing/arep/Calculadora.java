@@ -8,35 +8,22 @@ public class Calculadora {
     public static void main(String[] args) {
 
         port(getPort());
-        get("/cos",(req,res)->{
+        get("/convertir",(req,res)->{
             String dato = req.queryParams("value");
-            return respuestaCos(dato);
-
+            return respuestaConversion(dato);
         });
-        get("/ln",(req,res)->{
-            String dato = req.queryParams("value");
-            return respuestaLn(dato);
 
-        });
     }
 
-    private static Object respuestaLn(String dato) {
+    private static Object respuestaConversion(String dato) {
         JSONObject jsObject = new JSONObject();
         Double numero = Double.parseDouble(dato);
-        double  total = Math.log(numero);
-        jsObject.put("Operacion", "Logaritmo natural ");
-        jsObject.put("Dato",dato);
-        jsObject.put("Resultado",total);
-        return jsObject;
-    }
-
-    private static Object respuestaCos(String dato) {
-        JSONObject jsObject = new JSONObject();
-        Double numero = Double.parseDouble(dato);
-        double  total = Math.cos(numero);
-        jsObject.put("Operacion", "Coseno");
-        jsObject.put("Dato",dato);
-        jsObject.put("Resultado",total);
+        Double cinco = new Double(5);
+        Double nueve = new Double(9);
+        Double  total = (numero - 32) * (cinco/nueve);
+        jsObject.put("Conversion ", "grados fahrenheit a grados celsius ");
+        jsObject.put("fahrenheit",numero);
+        jsObject.put("celsius",total);
         return jsObject;
     }
 

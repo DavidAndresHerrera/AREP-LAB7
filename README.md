@@ -1,6 +1,8 @@
-## AREP-2021 Parcial Docker
+## AREP-2021 LAB 7
 
-En esta entrega esta el desarrollo de las funciones cos y ln  y el documento correspondiente para docker
+En este laboratorio se busca implementar un api que va a ser desplegada a una maquina EC2 y despues se va a usar en una funcion de AWS gateway 
+y esta debe responder de manaera correcta un Json
+
 
 ### Prerequisitos
 
@@ -11,19 +13,7 @@ En esta entrega esta el desarrollo de las funciones cos y ln  y el documento cor
 ### Funcionamiento 
 
 La aplicacion quedo corriendo en una mquina EC2 de AWS y quedo montada la imagen de docker en DockerHub
-
-![](images/coseno%20corriendo.png)
-
-![](images/lncorriendo.png)
-
-![](images/crearImagen.png)
-
-![](images/montar%20a%20dockerhub.png)
-
-![](images/VerifiacarCorriendo.png)
-
-![](images/montadaEnDocker.png)
-
+Luego de montarla en la maquina EC2 se hace el uso de Amazon API GATEWAY para publicar este api
 
 ### Licencia
 GNU General Public License v3.0 
